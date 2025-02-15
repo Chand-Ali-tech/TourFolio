@@ -16,7 +16,7 @@ function ToursStats() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://localhost:8000/api/tour/tour-stats"
+          "https://tour-folio-backend.vercel.app/api/tour/tour-stats"
         );
         setStats(response.data.data);
       } catch (error) {
