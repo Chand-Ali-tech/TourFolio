@@ -16,7 +16,7 @@ const PaymentHandler = require('./routes/bookingRouter')
 
 app.use(
   cors({
-    origin: "https://tour-folio.vercel.app/", // Replace with your frontend URL
+    origin: "https://tour-folio.vercel.app", // Replace with your frontend URL
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
   })
