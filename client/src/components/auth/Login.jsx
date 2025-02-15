@@ -42,7 +42,7 @@ function Login() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:8000/api/user/login",
+        "https://tour-folio-backend.vercel.app/api/user/login",
         { email, password, recaptchaToken },
         { withCredentials: true }
       );
