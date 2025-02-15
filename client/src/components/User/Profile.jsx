@@ -23,7 +23,7 @@ function Profile() {
     async function handleLogout() {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:8000/api/user/logout/", {
+        const res = await axios.get("https://tour-folio-backend.vercel.app/api/user/logout/", {
           withCredentials: true,
         });
 
@@ -66,7 +66,7 @@ function Profile() {
     try {
       setLoading(true);
       const res = await axios.patch(
-        "http://localhost:8000/api/user/updateMe",
+        "https://tour-folio-backend.vercel.app/api/user/updateMe",
         formData,
         {
           withCredentials: true,
