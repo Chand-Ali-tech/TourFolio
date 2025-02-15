@@ -1,0 +1,73 @@
+.flying-plane-header {
+    animation: flyAround 6s ease-in-out forwards;
+}
+.text-shadow-black {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes flyAround {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    5% {
+        transform: translate(5vw, -5vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    10% {
+        transform: translate(0vw, 0vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    15% {
+        transform: translate(5vw, -5vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(0vw, 0vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(5vw, -5vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    30% {
+        transform: translate(5vw, -5vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    40% {
+        transform: translate(50vw, -35vh);
+        /* Moving up in an arc */
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(100vw, 0);
+        /* Peak of the arc */
+        opacity: 1;
+    }
+
+    85% {
+        transform: translate(30vw, 20vh);
+        /* Coming down */
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        /* Back to original position */
+        opacity: 1;
+    }
+}
