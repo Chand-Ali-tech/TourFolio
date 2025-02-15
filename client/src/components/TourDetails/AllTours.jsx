@@ -16,7 +16,7 @@ function AllTours() {
     if (tours.length === 0) {
       const fetchTours = async () => {
         try {
-          const res = await axios.get("http://localhost:8000/api/tour");
+          const res = await axios.get("https://tour-folio-backend.vercel.app/api/tour");
           dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
         } catch (error) {
           console.error("Error fetching tours:", error);
@@ -28,7 +28,7 @@ function AllTours() {
   
   async function handleDeleteTour(id) {
     try {
-      await axios.delete(`http://localhost:8000/api/tour/${id}`, {
+      await axios.delete(`https://tour-folio-backend.vercel.app/api/tour/${id}`, {
         withCredentials: true,
       });
 
