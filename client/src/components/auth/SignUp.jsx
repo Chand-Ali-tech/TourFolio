@@ -57,7 +57,7 @@ function SignUp() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:8000/api/user/signup", {
+      const res = await axios.post("https://tour-folio-backend.vercel.app/api/user/signup", {
         name,
         email,
         password,
@@ -93,7 +93,7 @@ function SignUp() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:8000/api/user/signup/verify-email",
+        "https://tour-folio-backend.vercel.app/api/user/signup/verify-email",
         {
           email,
           otp: code,
