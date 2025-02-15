@@ -53,7 +53,7 @@ function Tour() {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/tour/addToFavorites",
+        "https://tour-folio-backend.vercel.app/api/tour/addToFavorites",
         {
           tourId: tour._id,
         },
@@ -85,7 +85,7 @@ function Tour() {
       }
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:8000/api/tour/${id}`);
+        const res = await axios.get(`https://tour-folio-backend.vercel.app/api/tour/${id}`);
         dispatch({ type: Actions.addTour, payload: res.data });
         setTour(res.data.data);
       } catch (error) {
@@ -108,7 +108,7 @@ function Tour() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:8000/api/tour/${id}/review`
+        `https://tour-folio-backend.vercel.app/api/tour/${id}/review`
       );
       setReviews(res.data.data);
     } catch (error) {
