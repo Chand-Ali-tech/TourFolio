@@ -12,7 +12,7 @@ function AllUsers() {
   useEffect(() => {
     async function fetchAllUsers() {
       try {
-        const res = await axios.get("http://localhost:8000/api/user/", {
+        const res = await axios.get("https://tour-folio-backend.vercel.app/api/user/", {
           withCredentials: true,
         });
         setUsers(res.data.data);
@@ -26,7 +26,7 @@ function AllUsers() {
   async function handleDelete(userId) {
     try {
       await axios.delete(
-        `http://localhost:8000/api/user/deleteAccount/${userId}`,
+        `https://tour-folio-backend.vercel.app/api/user/deleteAccount/${userId}`,
         {
           withCredentials: true,
         }
