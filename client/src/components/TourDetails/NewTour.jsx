@@ -81,7 +81,7 @@ function NewTour() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:8000/api/tour", formData, {
+      const res = await axios.post("https://tour-folio-backend.vercel.app/api/tour", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
