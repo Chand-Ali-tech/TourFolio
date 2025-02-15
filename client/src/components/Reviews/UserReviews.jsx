@@ -14,7 +14,7 @@ function UserReviews() {
 
     async function fetchUserReviews() {
       try {
-        const res = await axios.get("http://localhost:8000/api/user/reviews", {
+        const res = await axios.get("https://tour-folio-backend.vercel.app/api/user/reviews", {
           withCredentials: true,
           signal: controller.signal,
         });
@@ -33,7 +33,7 @@ function UserReviews() {
   const handleDelete = async (reviewId, tourId) => {
     try {
       await axios.delete(
-        `http://localhost:8000/api/tour/${tourId}/review/${reviewId}`,
+        `https://tour-folio-backend.vercel.app/api/tour/${tourId}/review/${reviewId}`,
         { withCredentials: true }
       );
 
