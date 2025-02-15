@@ -11,7 +11,7 @@ function TrendingTours() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://localhost:8000/api/tour/top-5-tours"
+          "https://tour-folio-backend.vercel.app/api/tour/top-5-tours"
         );
         setTopTours(response.data.data.tours);
       } catch (error) {
