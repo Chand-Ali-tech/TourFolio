@@ -17,7 +17,7 @@ function Panel() {
       try {
         setLoading(true);
         const res = await axios.get(
-          "http://localhost:8000/api/user/check-auth",
+          "https://tour-folio-backend.vercel.app/api/user/check-auth",
           {
             withCredentials: true,
           }
