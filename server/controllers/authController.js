@@ -35,12 +35,12 @@ const CreateSendToken = async (user, statusCode, res) => {
 
   res.cookie("jwt", token, cookieOptions);
 
-  // const populatedUser = await user.populate("favouriteTours");
+  const populatedUser = await user.populate("favouriteTours");
 
   res.status(statusCode).json({
     status: "success",
     token,
-    user//: populatedUser,
+    user: populatedUser,
   });
 };
 
