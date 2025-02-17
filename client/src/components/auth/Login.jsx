@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { usePopUpData } from "../../contexts/PopUpDataContext";
 import { useAuth } from "../../contexts/AuthContext";
-import { useLoading } from "../../contexts/LoadingContext"
+import { useLoading } from "../../contexts/LoadingContext";
 import { useTheme } from "../../contexts/ThemeContext"; // Import Theme Context
 
 const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
@@ -46,7 +46,6 @@ function Login() {
         { email, password, recaptchaToken },
         { withCredentials: true }
       );
-      
 
       if (res.status === 200) {
         setPopupData({ type: "success", message: "Login successful!" });
@@ -66,6 +65,7 @@ function Login() {
           message: "Try again after 15 minutes!",
         });
       } else {
+        console.log("Error: " + error);
         setPopupData({
           type: "error",
           message: "Login failed. Please try again.",
@@ -134,7 +134,7 @@ function Login() {
             />
           </div>
 
-          <ReCAPTCHA sitekey={siteKey} onChange={onChange}/>
+          <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
 
           {!loading ? (
             <button
