@@ -8,7 +8,19 @@
     { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "api/$1.js" },
-    { "src": "/(.*)", "dest": "client/build/$1" }
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://tour-folio.vercel.app",
+        "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true"
+      },
+      "dest": "api/$1.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/build/$1"
+    }
   ]
 }
