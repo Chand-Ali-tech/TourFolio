@@ -16,7 +16,7 @@ const PaymentHandler = require('./routes/bookingRouter')
 
 app.use(
   cors({
-    origin: "*", // Replace with your frontend URL
+    origin: ["http://localhost:5173", "https://tourfolio.vercel.app"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
   })
