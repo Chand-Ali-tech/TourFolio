@@ -14,7 +14,6 @@ const ErrorController = require("./controllers/errorController");
 const ReviewHandler = require("./routes/reviewRouter");
 const PaymentHandler = require('./routes/bookingRouter')
 
-app.options('*', cors());
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://tourfolio.vercel.app"],
