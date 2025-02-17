@@ -12,7 +12,6 @@ dotenv.config();
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_Secret, {
-    // expiresIn: 30,
     expiresIn: process.env.JWT_Expires_In,
   });
 };
@@ -25,8 +24,7 @@ const CreateSendToken = async (user, statusCode, res) => {
 
   const cookieOptions = {
     expires: new Date(
-      Date.now() + 10 * 24 * 60 * 60 * 1000
-      // Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      Date.now() + process.env.JWT_Cookie_Expires_In * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
     secure: true,
