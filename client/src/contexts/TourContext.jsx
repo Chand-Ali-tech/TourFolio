@@ -42,7 +42,7 @@ function ToursProvider({ children }) {
   // const [tours, setTours] = useState([]);
   const [{ tours, bookings }, dispatch] = useReducer(reducer, initialState);
 
-  console.log("Tours from tourContext :- ", tours);
+  // console.log("Tours from tourContext :- ", tours);
   return (
     <ToursContext.Provider value={{ tours, dispatch, bookings }}>
       {children}

@@ -17,7 +17,7 @@ function AuthProvider({ children }) {
       try {
         setLoading(true);
         const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/user/check-auth`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/check-auth`,
           {
             withCredentials: true,
           }
@@ -32,7 +32,7 @@ function AuthProvider({ children }) {
       } catch (error) {
         setIsLoggedIn(false);
         setUser(null);
-        console.error(error);
+        // console.error(error);
       } finally {
         setLoading(false);
       }
