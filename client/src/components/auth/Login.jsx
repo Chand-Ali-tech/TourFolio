@@ -42,13 +42,11 @@ function Login() {
     try {
       setLoading(true);
       const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
-        { email, password, recaptchaToken },
-        { withCredentials: true,
-         headers: {
-      "Content-Type": "application/json",
-    }, }
-      );
+  `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
+  { email, password, recaptchaToken },
+  { withCredentials: true }
+);
+
 
       if (res.status === 200) {
         setPopupData({ type: "success", message: "Login successful!" });
