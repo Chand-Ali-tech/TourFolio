@@ -16,10 +16,11 @@ const PaymentHandler = require('./routes/bookingRouter')
 
 app.use(
   cors({
-   origin: ["http://localhost:5173", "https://tourfolio.vercel.app"],
+   origin: "*",
+   // origin: ["http://localhost:5173", "https://tourfolio.vercel.app"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
-    credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"] // Allow necessary headers
+    // credentials: true,
+    // allowedHeaders: ["Content-Type", "Authorization"] // Allow necessary headers
   })
 );
 
