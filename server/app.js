@@ -19,8 +19,10 @@ app.use(
     origin: ["http://localhost:5173", "https://tourfolio.vercel.app"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"] // Allow necessary headers
   })
 );
+
 
 app.use(helmet());
 
