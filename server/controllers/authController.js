@@ -12,8 +12,8 @@ dotenv.config();
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_Secret, {
-    expiresIn: 30,
-    // expiresIn: process.env.JWT_Expires_In,
+    // expiresIn: 30,
+    expiresIn: process.env.JWT_Expires_In,
   });
 };
 
