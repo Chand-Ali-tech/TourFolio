@@ -23,7 +23,7 @@ function Tour() {
   const [tour, setTour] = useState(null);
   const [reviews, setReviews] = useState([]);
   const { user } = useAuth();
-  const {setPopupData } = usePopUpData();
+  const { setPopupData } = usePopUpData();
   const navigate = useNavigate();
 
   function handleAddReview(newReview) {
@@ -53,7 +53,7 @@ function Tour() {
 
     try {
       await axios.post(
-        "https://tour-folio-backend.vercel.app/api/tour/addToFavorites",
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour/addToFavorites`,
         {
           tourId: tour._id,
         },
@@ -85,7 +85,9 @@ function Tour() {
       }
       try {
         setLoading(true);
-        const res = await axios.get(`https://tour-folio-backend.vercel.app/api/tour/${id}`);
+        const res = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/tour/${id}`
+        );
         dispatch({ type: Actions.addTour, payload: res.data });
         setTour(res.data.data);
       } catch (error) {
@@ -108,7 +110,7 @@ function Tour() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `https://tour-folio-backend.vercel.app/api/tour/${id}/review`
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour/${id}/review`
       );
       setReviews(res.data.data);
     } catch (error) {

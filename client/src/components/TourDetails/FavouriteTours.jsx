@@ -24,7 +24,7 @@ function FavouriteTours() {
 
     try {
       await axios.delete(
-        `https://tour-folio-backend.vercel.app/api/tour/removeFromFavorites/${tourId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour/removeFromFavorites/${tourId}`,
         {
           withCredentials: true,
         }

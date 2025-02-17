@@ -1,23 +1,26 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 import axios from "axios";
-import { FaPlus, FaMinus } from "react-icons/fa"; 
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 function UserReviews() {
   const { theme } = useTheme();
   const isDarkTheme = theme === "dark";
   const [userReviews, setUserReviews] = useState([]);
-  const [isExpanded, setIsExpanded] = useState(false); 
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
 
     async function fetchUserReviews() {
       try {
-        const res = await axios.get("https://tour-folio-backend.vercel.app/api/user/reviews", {
-          withCredentials: true,
-          signal: controller.signal,
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/reviews`,
+          {
+            withCredentials: true,
+            signal: controller.signal,
+          }
+        );
         setUserReviews(res.data.data);
       } catch (error) {
         // alert("Error getting user reviews.")
@@ -33,7 +36,9 @@ function UserReviews() {
   const handleDelete = async (reviewId, tourId) => {
     try {
       await axios.delete(
-        `https://tour-folio-backend.vercel.app/api/tour/${tourId}/review/${reviewId}`,
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/tour/${tourId}/review/${reviewId}`,
         { withCredentials: true }
       );
 

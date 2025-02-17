@@ -17,7 +17,7 @@ function Panel() {
       try {
         setLoading(true);
         const res = await axios.get(
-          "https://tour-folio-backend.vercel.app/api/user/check-auth",
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/check-auth`,
           {
             withCredentials: true,
           }

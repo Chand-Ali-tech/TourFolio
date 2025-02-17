@@ -15,7 +15,7 @@ function NewTour() {
     ratingQuantity: 0,
     summary: "",
     priceDiscount: "",
-    promoCode: "", 
+    promoCode: "",
     startDates: [],
     guides: [],
     locations: "",
@@ -81,10 +81,14 @@ function NewTour() {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://tour-folio-backend.vercel.app/api/tour", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        withCredentials: true,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+          withCredentials: true,
+        }
+      );
 
       if (res.data.status === "success") {
         alert("Tour added successfully!");
@@ -263,7 +267,9 @@ function NewTour() {
             }`}
           />
 
-          <label className="block font-semibold">Additional Images(Max of 3)</label>
+          <label className="block font-semibold">
+            Additional Images(Max of 3)
+          </label>
           <input
             type="file"
             name="images"

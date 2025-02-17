@@ -4,19 +4,21 @@ import { useTours } from "../../contexts/TourContext";
 import { Actions } from "../../contexts/TourContextActions";
 import axios from "axios";
 import { useTheme } from "../../contexts/ThemeContext";
-import { FaPlus, FaMinus } from "react-icons/fa"; 
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 function AllTours() {
   const { tours, dispatch } = useTours();
   const { theme } = useTheme();
   const isDarkTheme = theme === "dark";
   const navigate = useNavigate();
-  const [isListVisible, setIsListVisible] = useState(false); 
+  const [isListVisible, setIsListVisible] = useState(false);
   useEffect(() => {
     if (tours.length === 0) {
       const fetchTours = async () => {
         try {
-          const res = await axios.get("https://tour-folio-backend.vercel.app/api/tour");
+          const res = await axios.get(
+            `${import.meta.env.VITE_BACKEND_URL}/api/tour`
+          );
           dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
         } catch (error) {
           console.error("Error fetching tours:", error);
@@ -25,10 +27,10 @@ function AllTours() {
       fetchTours();
     }
   }, [dispatch, tours.length]);
-  
+
   async function handleDeleteTour(id) {
     try {
-      await axios.delete(`https://tour-folio-backend.vercel.app/api/tour/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/tour/${id}`, {
         withCredentials: true,
       });
 

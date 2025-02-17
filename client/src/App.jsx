@@ -30,6 +30,7 @@ function App() {
           <AppRoutes />
           {/* Hide Footer only on '/tours' route */}
           {location.pathname !== "/tours" && <Footer />}
+
           {popupData && (
             <PopUps type={popupData.type} message={popupData.message} />
           )}

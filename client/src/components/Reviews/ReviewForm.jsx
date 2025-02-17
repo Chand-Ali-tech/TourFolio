@@ -38,7 +38,7 @@ function ReviewForm({ handleAddReview }) {
     try {
       setLoading(true);
       const res = await axios.post(
-        `https://tour-folio-backend.vercel.app/api/tour/${id}/review`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour/${id}/review`,
         { review: reviewText, rating: rating, anonymous: isAnonymous }, // Added anonymous flag
         { withCredentials: true }
       );

@@ -46,7 +46,9 @@ function TourList() {
       if (page) query += `&page=${page}`;
       if (limit) query += `&limit=${limit}`;
 
-      const res = await axios.get(`https://tour-folio-backend.vercel.app/api/tour?${query}`);
+      const res = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour?${query}`
+      );
       console.log("Response:-", res.data.data);
 
       dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
@@ -55,8 +57,6 @@ function TourList() {
       console.error("Error fetching tours:", error);
     } finally {
       setLoading(false);
-
-      
     }
   }
 

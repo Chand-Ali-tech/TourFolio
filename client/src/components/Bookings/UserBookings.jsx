@@ -18,7 +18,7 @@ function UserBookings() {
     async function getUserBookings() {
       try {
         const res = await axios.get(
-          "https://tour-folio-backend.vercel.app/api/booking/userBookings",
+          `${import.meta.env.VITE_BACKEND_URL}/api/booking/userBookings`,
           {
             withCredentials: true,
             signal: controller.signal,

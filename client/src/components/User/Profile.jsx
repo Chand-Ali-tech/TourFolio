@@ -23,9 +23,12 @@ function Profile() {
     async function handleLogout() {
       try {
         setLoading(true);
-        const res = await axios.get("https://tour-folio-backend.vercel.app/api/user/logout/", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/logout/`,
+          {
+            withCredentials: true,
+          }
+        );
 
         if (res.status === 200) {
           setIsLoggedIn(false);
@@ -66,7 +69,7 @@ function Profile() {
     try {
       setLoading(true);
       const res = await axios.patch(
-        "https://tour-folio-backend.vercel.app/api/user/updateMe",
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/updateMe`,
         formData,
         {
           withCredentials: true,
@@ -95,7 +98,7 @@ function Profile() {
     }
   }
   console.log("Profile Component Rendered!");
-  console.log("User role is:- " + user.role)
+  console.log("User role is:- " + user.role);
   return (
     <>
       {isLoggedIn ? (
@@ -162,8 +165,6 @@ function Profile() {
           </div>
 
           {user.role !== "admin" && (
-          
-            
             <>
               <FavouriteTours />
               <UserBookings />

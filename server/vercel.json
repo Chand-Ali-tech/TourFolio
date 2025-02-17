@@ -1,26 +1,18 @@
 {
+  "scripts": {
+    "installCommand": "npm install --legacy-peer-deps"
+  },
+  "version": 2,
   "builds": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
-    },
-    { "src": "api/**/*.js", "use": "@vercel/node" }
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "headers": {
-        "Access-Control-Allow-Origin": "https://tour-folio.vercel.app",
-        "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-        "Access-Control-Allow-Credentials": "true"
-      },
-      "dest": "api/$1.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "client/build/$1"
+      "dest": "server.js"
     }
   ]
 }

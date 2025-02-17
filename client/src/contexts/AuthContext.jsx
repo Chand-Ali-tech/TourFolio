@@ -17,7 +17,7 @@ function AuthProvider({ children }) {
       try {
         setLoading(true);
         const res = await axios.get(
-          "https://tour-folio-backend.vercel.app/user/check-auth",
+          `${import.meta.env.VITE_BACKEND_URL}/user/check-auth`,
           {
             withCredentials: true,
           }
