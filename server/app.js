@@ -14,16 +14,17 @@ const ErrorController = require("./controllers/errorController");
 const ReviewHandler = require("./routes/reviewRouter");
 const PaymentHandler = require('./routes/bookingRouter')
 
+// CORS configuration
 app.use(
   cors({
-    //  origin: "*",
-    origin: ["http://localhost:5173", "https://tourfolio.vercel.app", "https://tour-folio-final-version.vercel.app"],
+    origin: ["http://localhost:5173", "https://tourfolio.vercel.app"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"] // Allow necessary headers
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
 
+app.options('*', cors()); // Enable preflight requests for all routes
 
 app.use(helmet());
 
@@ -34,7 +35,7 @@ const limiter = rateLimit({
   statusCode: 429,
 });
 
-// // Body parsor, Limiting the request from the same IP address.
+// Body parser, Limiting the request from the same IP address.
 app.use("/api/user/login", limiter);
 
 // Allowing to read data from req.body
@@ -46,7 +47,7 @@ app.use(cookieParser());
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
 
-//Prevent parameter pollution
+// Prevent parameter pollution
 app.use(
   hpp({
     whitelist: ["duration", "AverageRating", "Difficulty"],
@@ -65,5 +66,3 @@ app.all("*", (req, res, next) => {
 app.use(ErrorController);
 
 module.exports = app;
-
-// Toast for pop ups
