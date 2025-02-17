@@ -44,7 +44,10 @@ function Login() {
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
         { email, password, recaptchaToken },
-        { withCredentials: true }
+        { withCredentials: true,
+         headers: {
+      "Content-Type": "application/json",
+    }, }
       );
 
       if (res.status === 200) {
