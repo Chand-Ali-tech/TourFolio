@@ -42,6 +42,7 @@ function Login() {
     try {
       setLoading(true);
       const res = await axios.post(
+<<<<<<< HEAD
         `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
         { email, password, recaptchaToken },
         {
@@ -51,6 +52,13 @@ function Login() {
           },
         }
       );
+=======
+  `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
+  { email, password, recaptchaToken },
+  { withCredentials: true }
+);
+
+>>>>>>> 11243284e78e6acefad3ebae5651aeac24809f2b
 
       console.log("Response is:- ", res);
       

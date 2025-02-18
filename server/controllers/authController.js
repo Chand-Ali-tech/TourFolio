@@ -19,6 +19,9 @@ const signToken = (id) => {
 
 const CreateSendToken = async (user, statusCode, res) => {
   const token = signToken(user._id);
+  if(!token){
+    return next(new AppError("Token not created man", 400));
+  }
 
   const cookieOptions = {
     expires: new Date(

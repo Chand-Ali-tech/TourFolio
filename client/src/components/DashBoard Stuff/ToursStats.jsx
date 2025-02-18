@@ -20,7 +20,7 @@ function ToursStats() {
         );
         setStats(response.data.data);
       } catch (error) {
-        alert("Error fetching tour stats");
+        // alert("Error fetching tour stats");
       } finally {
         setLoading(false);
       }
