@@ -52,7 +52,7 @@ function Login() {
         }
       );
 
-      console.log("Response is:- ", res);
+      // console.log("Response is:- ", res);
 
       if (res.status === 200) {
         setPopupData({ type: "success", message: "Login successful!" });
@@ -61,7 +61,7 @@ function Login() {
         navigate("/");
       }
     } catch (error) {
-      console.log("Error from CA :- , ", error);
+      // console.log("Error from CA :- , ", error);
 
       if (error.response?.status === 401) {
         setPopupData({
@@ -74,7 +74,7 @@ function Login() {
           message: "Try again after 15 minutes!",
         });
       } else {
-        console.log("Error: " + error);
+        // console.log("Error: " + error);
         setPopupData({
           type: "error",
           message: "Login failed. Please try again.",
