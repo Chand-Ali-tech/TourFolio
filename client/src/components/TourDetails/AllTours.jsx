@@ -21,7 +21,7 @@ function AllTours() {
           );
           dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
         } catch (error) {
-          console.error("Error fetching tours:", error);
+          // console.error("Error fetching tours:", error);
         }
       };
       fetchTours();
@@ -37,11 +37,11 @@ function AllTours() {
       alert("Tour deleted successfully");
       dispatch({ type: Actions.deleteTour, payload: id });
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }
 
-  console.log("Tours :- ", tours);
+  // console.log("Tours :- ", tours);
 
   return (
     <div
