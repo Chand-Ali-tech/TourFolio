@@ -91,7 +91,7 @@ function Tour() {
         dispatch({ type: Actions.addTour, payload: res.data });
         setTour(res.data.data);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
         if (error.response && error.response.status === 404) {
           setPopupData({
             type: "error",
@@ -114,7 +114,7 @@ function Tour() {
       );
       setReviews(res.data.data);
     } catch (error) {
-      console.error("Error fetching reviews:", error);
+      // console.error("Error fetching reviews:", error);
     } finally {
       setLoading(false);
     }
