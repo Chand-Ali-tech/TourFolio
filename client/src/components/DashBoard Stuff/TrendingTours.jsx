@@ -15,7 +15,7 @@ function TrendingTours() {
         );
         setTopTours(response.data.data.tours);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       } finally {
         setLoading(false);
       }
