@@ -50,7 +50,7 @@ function ReviewForm({ handleAddReview }) {
         throw new Error("Unexpected response structure");
       }
     } catch (error) {
-      console.error("Error posting review:", error);
+      // console.error("Error posting review:", error);
       setPopupData({
         type: "error",
         message:
