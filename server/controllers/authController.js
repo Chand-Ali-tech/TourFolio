@@ -19,7 +19,7 @@ const signToken = (id) => {
 
 const CreateSendToken = async (user, statusCode, res) => {
   const token = signToken(user._id);
-  if(!token){
+  if (!token) {
     return next(new AppError("Token not created man", 400));
   }
 
@@ -27,11 +27,11 @@ const CreateSendToken = async (user, statusCode, res) => {
     expires: new Date(
       Date.now() + process.env.JWT_Cookie_Expires_In * 24 * 60 * 60 * 1000
     ),
-    // httpOnly: true,
-    // secure: true,
-    // sameSite: "strict",
+    httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
+    secure: process.env.NODE_ENV === 'production', // Ensures the cookie is only sent over HTTPS in production
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // Use 'none' for cross-site cookies in production
   };
-
+  
   res.cookie("jwt", token, cookieOptions);
 
   const populatedUser = await user.populate("favouriteTours");

@@ -42,7 +42,6 @@ function Login() {
     try {
       setLoading(true);
       const res = await axios.post(
-<<<<<<< HEAD
         `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
         { email, password, recaptchaToken },
         {
@@ -52,16 +51,9 @@ function Login() {
           },
         }
       );
-=======
-  `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
-  { email, password, recaptchaToken },
-  { withCredentials: true }
-);
-
->>>>>>> 11243284e78e6acefad3ebae5651aeac24809f2b
 
       console.log("Response is:- ", res);
-      
+
       if (res.status === 200) {
         setPopupData({ type: "success", message: "Login successful!" });
         setIsLoggedIn(true);
@@ -69,11 +61,7 @@ function Login() {
         navigate("/");
       }
     } catch (error) {
-
       console.log("Error from CA :- , ", error);
-      
-
-
 
       if (error.response?.status === 401) {
         setPopupData({
