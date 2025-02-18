@@ -49,12 +49,12 @@ function TourList() {
       const res = await axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/api/tour?${query}`
       );
-      console.log("Response:-", res.data.data);
+      // console.log("Response:-", res.data.data);
 
       dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
       setTotalPages(Math.ceil(res.data.data.Totaltours / limit));
     } catch (error) {
-      console.error("Error fetching tours:", error);
+      // console.error("Error fetching tours:", error);
     } finally {
       setLoading(false);
     }
