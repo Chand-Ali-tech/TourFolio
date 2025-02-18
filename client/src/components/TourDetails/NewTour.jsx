@@ -96,7 +96,7 @@ function NewTour() {
         alert("Error adding tour");
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       alert("Error adding tour");
     } finally {
       setLoading(false);
