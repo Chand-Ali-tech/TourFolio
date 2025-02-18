@@ -6,6 +6,7 @@ const sendEmail = require("../utils/email");
 const { promisify } = require("util");
 const dotenv = require('dotenv')
 const axios = require("axios");
+const { log } = require("console");
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ const CreateSendToken = async (user, statusCode, res) => {
 
   const cookieOptions = {
     expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      Date.now() + process.env.JWT_Cookie_Expires_In * 24 * 60 * 60 * 1000
     ),
     // httpOnly: true,
     // secure: true,
@@ -31,6 +32,9 @@ const CreateSendToken = async (user, statusCode, res) => {
   res.cookie("jwt", token, cookieOptions);
 
   const populatedUser = await user.populate("favouriteTours");
+
+
+  console.log("Create token and send it🙂")
 
   res.status(statusCode).json({
     status: "success",

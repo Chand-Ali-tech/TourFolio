@@ -59,6 +59,8 @@ exports.GetAllTours = catchAsync(async (req, res, next) => {
   const tours = await features.query; //features.query conatins all desired tours.
   const Totaltours = await Tour.find();
 
+  console.log("All tours from tourController!🙂");
+  
   res.status(200).json({
     status: "success",
     results: tours.length,

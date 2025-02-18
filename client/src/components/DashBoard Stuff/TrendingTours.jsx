@@ -22,7 +22,7 @@ function TrendingTours() {
     }
     getTopTours();
   }, []);
-
+  
   return (
     <div className="mx-8 my-10">
       {/* 🔥 Trending Tours Heading */}

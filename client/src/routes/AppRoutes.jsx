@@ -6,7 +6,7 @@ import Tours from "./../pages/Tours";
 import Tour from "./../pages/Tour";
 import Panel from "./../components/Panels/Panel";
 import ProtectedRoute from "../components/auth/ProtectedRoute"; // Import Protected Route
-import BookingTour from "../components/Bookings/UserBookings";
+import BookingTour from "../components/TourDetails/BookingTour";
 import Contact from "../pages/Contact";
 import About from "../pages/About";
 

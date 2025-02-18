@@ -8,8 +8,8 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { usePopUpData } from "../contexts/PopUpDataContext";
-import Loader from "./Loader";
+import { usePopUpData } from "../../contexts/PopUpDataContext";
+import Loader from "../Utils/Loader";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const stripePromise = loadStripe(
