@@ -17,7 +17,7 @@ function AllUsers() {
         });
         setUsers(res.data.data);
       } catch (error) {
-        console.error("Error fetching users:", error);
+        // console.error("Error fetching users:", error);
       }
     }
     fetchAllUsers();
@@ -34,7 +34,7 @@ function AllUsers() {
       alert("User deleted successfully");
       setUsers(users.filter((user) => user._id !== userId));
     } catch (error) {
-      console.error("Error deleting user:", error);
+      // console.error("Error deleting user:", error);
     }
   }
 
