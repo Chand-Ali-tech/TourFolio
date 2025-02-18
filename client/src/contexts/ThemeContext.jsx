@@ -15,10 +15,8 @@ function ThemeProvider({ children }) {
   }, [theme]);
 
     const toggleTheme = () => {
-        console.log("Chnage theme");
-        console.log(theme);
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-        console.log(theme);
+        // console.log(theme);
   };
 
   return (
