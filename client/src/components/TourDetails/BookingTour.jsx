@@ -119,7 +119,7 @@ function CheckoutForm({ price, tourId }) {
       card: elements.getElement(CardElement),
     });
     if (error) {
-      console.error(error);
+      // console.error(error);
       setPopupData({
         type: "error",
         message: "Booking failed. Please try again.",
@@ -143,7 +143,7 @@ function CheckoutForm({ price, tourId }) {
         });
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setPopupData({
         type: "error",
         message: "Booking failed due to a server error.",
