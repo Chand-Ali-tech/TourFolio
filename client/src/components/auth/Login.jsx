@@ -160,7 +160,7 @@ function Login() {
             </button>
           ) : (
             <div className="bg-gray-700 rounded-lg">
-              <Loader type="small" />
+              <Loader/>
             </div>
           )}
         </form>
