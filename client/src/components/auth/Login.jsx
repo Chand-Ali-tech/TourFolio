@@ -146,23 +146,23 @@ function Login() {
           <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
 
           {!loading ? (
-            <button
-              type="submit"
-              className={`w-full py-2 font-semibold rounded-lg transition ${
-                theme === "dark"
-                  ? "bg-blue-600 hover:bg-blue-700 text-white"
-                  : "bg-black hover:bg-gray-900 text-white"
-              }`}
-              disabled={loading}
-              onClick={handleSubmit}
-            >
-              Login
-            </button>
-          ) : (
-            <div className="bg-gray-700 rounded-lg">
-              <Loader/>
-            </div>
-          )}
+  <button
+    type="submit"
+    className={`w-full py-2 font-semibold rounded-lg transition ${
+      theme === "dark"
+        ? "bg-blue-600 hover:bg-blue-700 text-white"
+        : "bg-black hover:bg-gray-900 text-white"
+    }`}
+    disabled={loading}
+    onClick={handleSubmit}
+  >
+    Login
+  </button>
+) : (
+  <div className="bg-gray-700 rounded-lg">
+    <Loader type="small" /> {/* Add `type="small"` here */}
+  </div>
+)}
         </form>
 
         <p className="text-center mt-4">
