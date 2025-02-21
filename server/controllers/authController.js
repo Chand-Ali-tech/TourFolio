@@ -158,9 +158,10 @@ exports.Login = catchAsync(async (req, res, next) => {
 });
 
 exports.Logout = (req, res) => {
-  res.cookie("jwt", "", {
-    expires: new Date(0),
+  res.clearCookie("jwt", {
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   });
 
   res.status(200).json({
@@ -168,6 +169,7 @@ exports.Logout = (req, res) => {
     message: "Logged out successfully!",
   });
 };
+
 
 exports.Protect = catchAsync(async (req, res, next) => {
   console.log("hello from protect!");
