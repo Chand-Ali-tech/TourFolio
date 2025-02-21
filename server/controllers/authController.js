@@ -158,8 +158,8 @@ exports.Login = catchAsync(async (req, res, next) => {
 });
 
 exports.Logout = (req, res) => {
-  res.cookie("jwt", "logout", {
-    expires: new Date(Date.now() + 10),
+  res.cookie("jwt", "", {
+    expires: new Date(0),
     httpOnly: true,
   });
 
