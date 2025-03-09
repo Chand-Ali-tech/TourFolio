@@ -24,13 +24,13 @@ const CreateSendToken = async (user, statusCode, res) => {
   }
 
   const cookieOptions = {
-    expires: new Date(
-      Date.now() + process.env.JWT_Cookie_Expires_In * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-    secure: process.env.NODE_ENV === 'production', // Ensures the cookie is only sent over HTTPS in production
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // Use 'none' for cross-site cookies in production
-  };
+  expires: new Date(
+    Date.now() + Number(process.env.JWT_Cookie_Expires_In) * 24 * 60 * 60 * 1000
+  ),
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+};
   
   res.cookie("jwt", token, cookieOptions);
 
