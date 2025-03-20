@@ -130,7 +130,7 @@ function CheckoutForm({ price, tourId }) {
 
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/booking/tour/${tourId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/booking/tour/${tourId}`,
         { amount: price, paymentMethodId: paymentMethod.id },
         { withCredentials: true }
       );
