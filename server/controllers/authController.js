@@ -28,7 +28,8 @@ const CreateSendToken = async (user, statusCode, res) => {
     Date.now() + Number(process.env.JWT_Cookie_Expires_In) * 24 * 60 * 60 * 1000
   ),
   httpOnly: true,
-  secure: process.env.NODE_ENV === "production",
+  // secure: process.env.NODE_ENV === "production",
+    secure: true,
   sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
 };
   
@@ -41,7 +42,7 @@ const CreateSendToken = async (user, statusCode, res) => {
 
   res.status(statusCode).json({
     status: "success",
-    token,
+  //  token,
     user: populatedUser,
   });
 };
@@ -57,7 +58,7 @@ exports.Signup = catchAsync(async (req, res, next) => {
     return next(new AppError("Invalid reCAPTCHA token!", 412));
   }
 
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY; // Store this in .env
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY; 
 
   const response = await axios.post(
     `https://www.google.com/recaptcha/api/siteverify`,
