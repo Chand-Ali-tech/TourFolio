@@ -86,7 +86,8 @@ function Tour() {
       try {
         setLoading(true);
         const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/tour/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/tour/${id}`,
+          { withCredentials: true }
         );
         dispatch({ type: Actions.addTour, payload: res.data });
         setTour(res.data.data);
