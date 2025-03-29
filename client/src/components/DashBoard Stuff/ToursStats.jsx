@@ -16,8 +16,10 @@ function ToursStats() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/tour/tour-stats`
-        );
+        `${import.meta.env.VITE_BACKEND_URL}/api/tour/tour-stats`,
+        { withCredentials: true }
+      );
+
         setStats(response.data.data);
       } catch (error) {
         // alert("Error fetching tour stats");
