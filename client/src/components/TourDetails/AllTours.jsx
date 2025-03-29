@@ -17,7 +17,8 @@ function AllTours() {
       const fetchTours = async () => {
         try {
           const res = await axios.get(
-            `${import.meta.env.VITE_BACKEND_URL}/api/tour`
+            `${import.meta.env.VITE_BACKEND_URL}/api/tour`,
+            { withCredentials: true }
           );
           dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
         } catch (error) {
