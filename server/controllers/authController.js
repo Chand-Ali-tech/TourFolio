@@ -31,7 +31,7 @@ const CreateSendToken = async (user, statusCode, res) => {
     secure: process.env.NODE_ENV === 'production', // Ensures the cookie is only sent over HTTPS in production
     sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // Use 'none' for cross-site cookies in production
   };
-  
+
   res.cookie("jwt", token, cookieOptions);
 
   const populatedUser = await user.populate("favouriteTours");
@@ -158,8 +158,8 @@ exports.Login = catchAsync(async (req, res, next) => {
 });
 
 exports.Logout = (req, res) => {
-  res.cookie("jwt", "logout", {
-    expires: new Date(Date.now() + 10),
+  res.cookie("jwt", "", {
+    expires: new Date(0),
     httpOnly: true,
   });
 

@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from 'prop-types';
 
-// Use PascalCase for the context name
 const PopUpDataContext = createContext();
 
 function PopUpDataProvider({ children }) {
