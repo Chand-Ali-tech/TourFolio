@@ -158,12 +158,7 @@ exports.Login = catchAsync(async (req, res, next) => {
 });
 
 exports.Logout = (req, res) => {
-<<<<<<< HEAD
-  res.cookie("jwt", "", {
-    expires: new Date(0),
-=======
   res.clearCookie("jwt", {
->>>>>>> 54faaa90002cc48620530417df3d91be160feae6
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
