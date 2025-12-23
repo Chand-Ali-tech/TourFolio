@@ -17,7 +17,7 @@ mongoose.connect(DB, {
 })
 
 const port = process.env.PORT || 300;
-const server = app.listen(port, () => {
+const server = app.listen(port, '0.0.0.0', () => {
   console.log(`App is live on port ${port}`)
 })
 
