@@ -119,7 +119,7 @@ function CheckoutForm({ price, tourId }) {
       card: elements.getElement(CardElement),
     });
     if (error) {
-      console.error(error);
+      // console.error(error);
       setPopupData({
         type: "error",
         message: "Booking failed. Please try again.",
@@ -130,7 +130,7 @@ function CheckoutForm({ price, tourId }) {
 
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/booking/tour/${tourId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/booking/tour/${tourId}`,
         { amount: price, paymentMethodId: paymentMethod.id },
         { withCredentials: true }
       );
@@ -143,7 +143,7 @@ function CheckoutForm({ price, tourId }) {
         });
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setPopupData({
         type: "error",
         message: "Booking failed due to a server error.",

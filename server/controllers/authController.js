@@ -24,14 +24,14 @@ const CreateSendToken = async (user, statusCode, res) => {
   }
 
   const cookieOptions = {
-    expires: new Date(
-      Date.now() + process.env.JWT_Cookie_Expires_In * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-    secure: process.env.NODE_ENV === 'production', // Ensures the cookie is only sent over HTTPS in production
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // Use 'none' for cross-site cookies in production
-  };
-
+  expires: new Date(
+    Date.now() + Number(process.env.JWT_Cookie_Expires_In) * 24 * 60 * 60 * 1000
+  ),
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+};
+  
   res.cookie("jwt", token, cookieOptions);
 
   const populatedUser = await user.populate("favouriteTours");
@@ -41,7 +41,7 @@ const CreateSendToken = async (user, statusCode, res) => {
 
   res.status(statusCode).json({
     status: "success",
-    token,
+  //  token,
     user: populatedUser,
   });
 };
@@ -57,7 +57,7 @@ exports.Signup = catchAsync(async (req, res, next) => {
     return next(new AppError("Invalid reCAPTCHA token!", 412));
   }
 
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY; // Store this in .env
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY; 
 
   const response = await axios.post(
     `https://www.google.com/recaptcha/api/siteverify`,
@@ -158,9 +158,15 @@ exports.Login = catchAsync(async (req, res, next) => {
 });
 
 exports.Logout = (req, res) => {
+<<<<<<< HEAD
   res.cookie("jwt", "", {
     expires: new Date(0),
+=======
+  res.clearCookie("jwt", {
+>>>>>>> 54faaa90002cc48620530417df3d91be160feae6
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   });
 
   res.status(200).json({
@@ -168,6 +174,7 @@ exports.Logout = (req, res) => {
     message: "Logged out successfully!",
   });
 };
+
 
 exports.Protect = catchAsync(async (req, res, next) => {
   console.log("hello from protect!");

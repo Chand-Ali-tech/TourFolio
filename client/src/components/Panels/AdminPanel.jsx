@@ -7,7 +7,7 @@ import { useTheme } from "./../../contexts/ThemeContext"; // Import ThemeContext
 function AdminPanel({ tours }) {
   const { theme } = useTheme(); // Get the current theme (dark or light)
   const isDarkTheme = theme === "dark";
-  console.log("Tours from admin panel:-", tours);
+  // console.log("Tours from admin panel:-", tours);
 
   return (
     <div

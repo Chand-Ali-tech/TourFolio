@@ -43,7 +43,7 @@ function FavouriteTours() {
         ),
       }));
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
       setPopupData({
         type: "error",
         message: "Failed to remove tour from favourites!",

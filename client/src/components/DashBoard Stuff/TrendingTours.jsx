@@ -11,11 +11,12 @@ function TrendingTours() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/tour/top-5-tours`
+          `${import.meta.env.VITE_BACKEND_URL}/api/tour/top-5-tours`,
+          { withCredentials: true }
         );
         setTopTours(response.data.data.tours);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       } finally {
         setLoading(false);
       }

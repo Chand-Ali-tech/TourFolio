@@ -52,7 +52,7 @@ function Login() {
         }
       );
 
-      console.log("Response is:- ", res);
+      // console.log("Response is:- ", res);
 
       if (res.status === 200) {
         setPopupData({ type: "success", message: "Login successful!" });
@@ -61,7 +61,7 @@ function Login() {
         navigate("/");
       }
     } catch (error) {
-      console.log("Error from CA :- , ", error);
+      // console.log("Error from CA :- , ", error);
 
       if (error.response?.status === 401) {
         setPopupData({
@@ -74,7 +74,7 @@ function Login() {
           message: "Try again after 15 minutes!",
         });
       } else {
-        console.log("Error: " + error);
+        // console.log("Error: " + error);
         setPopupData({
           type: "error",
           message: "Login failed. Please try again.",
@@ -146,23 +146,23 @@ function Login() {
           <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
 
           {!loading ? (
-            <button
-              type="submit"
-              className={`w-full py-2 font-semibold rounded-lg transition ${
-                theme === "dark"
-                  ? "bg-blue-600 hover:bg-blue-700 text-white"
-                  : "bg-black hover:bg-gray-900 text-white"
-              }`}
-              disabled={loading}
-              onClick={handleSubmit}
-            >
-              Login
-            </button>
-          ) : (
-            <div className="bg-gray-700 rounded-lg">
-              <Loader type="small" />
-            </div>
-          )}
+  <button
+    type="submit"
+    className={`w-full py-2 font-semibold rounded-lg transition ${
+      theme === "dark"
+        ? "bg-blue-600 hover:bg-blue-700 text-white"
+        : "bg-black hover:bg-gray-900 text-white"
+    }`}
+    disabled={loading}
+    onClick={handleSubmit}
+  >
+    Login
+  </button>
+) : (
+  <div className="bg-gray-700 rounded-lg">
+    <Loader type="small" /> {/* Add `type="small"` here */}
+  </div>
+)}
         </form>
 
         <p className="text-center mt-4">

@@ -62,7 +62,8 @@ function SignUp() {
         email,
         password,
         recaptchaToken,
-      });
+      },
+      { withCredentials: true });
 
       if (res.status === 200) {
         setPopupData({
@@ -97,7 +98,8 @@ function SignUp() {
         {
           email,
           otp: code,
-        }
+        },
+        { withCredentials: true }
       );
 
       if (res.status === 201) {

@@ -17,11 +17,12 @@ function AllTours() {
       const fetchTours = async () => {
         try {
           const res = await axios.get(
-            `${import.meta.env.VITE_BACKEND_URL}/api/tour`
+            `${import.meta.env.VITE_BACKEND_URL}/api/tour`,
+            { withCredentials: true }
           );
           dispatch({ type: Actions.setTourData, payload: res.data.data.tours });
         } catch (error) {
-          console.error("Error fetching tours:", error);
+          // console.error("Error fetching tours:", error);
         }
       };
       fetchTours();
@@ -37,11 +38,11 @@ function AllTours() {
       alert("Tour deleted successfully");
       dispatch({ type: Actions.deleteTour, payload: id });
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }
 
-  console.log("Tours :- ", tours);
+  // console.log("Tours :- ", tours);
 
   return (
     <div

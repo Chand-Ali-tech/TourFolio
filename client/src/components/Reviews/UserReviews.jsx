@@ -46,7 +46,7 @@ function UserReviews() {
         prevReviews.filter((r) => r._id !== reviewId)
       );
     } catch (error) {
-      console.error("Error deleting review:", error);
+      // console.error("Error deleting review:", error);
     }
   };
 

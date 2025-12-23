@@ -3,7 +3,7 @@ import { createContext, useState, useEffect, useContext } from "react";
 const ThemeContext = createContext();
 
 function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
   useEffect(() => {
     if (theme === "dark") {
@@ -15,10 +15,8 @@ function ThemeProvider({ children }) {
   }, [theme]);
 
     const toggleTheme = () => {
-        console.log("Chnage theme");
-        console.log(theme);
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-        console.log(theme);
+        // console.log(theme);
   };
 
   return (

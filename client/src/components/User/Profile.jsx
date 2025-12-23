@@ -41,7 +41,7 @@ function Profile() {
           navigate(-1);
         }
       } catch (error) {
-        console.log("Error getting user", error);
+        // console.log("Error getting user", error);
       } finally {
         setLoading(false);
       }
@@ -92,13 +92,13 @@ function Profile() {
         message: "There was an error uploading your photo.",
         type: "error",
       });
-      console.log("Error updating photo", error);
+      // console.log("Error updating photo", error);
     } finally {
       setLoading(false);
     }
   }
-  console.log("Profile Component Rendered!");
-  console.log("User role is:- " + user.role);
+  // console.log("Profile Component Rendered!");
+  // console.log("User role is:- " + user.role);
   return (
     <>
       {isLoggedIn ? (
