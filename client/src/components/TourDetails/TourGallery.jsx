@@ -12,13 +12,13 @@ function TourGallery({ tour }) {
       >
         Gallery
       </h2>
-      <div className="grid grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {tour.images.map((img, index) => (
           <img
             key={index}
             src={img}
             alt={`Tour image ${index + 1}`}
-            className="w-full h-60 object-cover rounded-xl shadow-sm"
+            className="w-full h-52 sm:h-60 object-cover rounded-xl shadow-sm"
           />
         ))}
       </div>

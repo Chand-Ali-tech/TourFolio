@@ -128,13 +128,13 @@ function SignUp() {
           }`}
         >
           <div
-            className={`p-8 rounded-lg shadow-lg w-96 h-auto ${
+            className={`p-5 sm:p-8 rounded-lg shadow-lg w-full max-w-md mx-4 h-auto ${
               theme === "dark"
                 ? "bg-gray-800 text-gray-200"
                 : "bg-white text-gray-900"
             }`}
           >
-            <h1 className="text-4xl font-semibold text-center mb-6">Sign Up</h1>
+            <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6">Sign Up</h1>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="relative">
                 <FaUser
@@ -196,7 +196,9 @@ function SignUp() {
                 />
               </div>
 
-              <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
+              <div className="overflow-x-auto">
+                <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
+              </div>
 
               {!loading ? (
                 <button
@@ -240,13 +242,13 @@ function SignUp() {
           }`}
         >
           <div
-            className={`p-8 rounded-lg shadow-lg w-96 h-auto ${
+            className={`p-5 sm:p-8 rounded-lg shadow-lg w-full max-w-md mx-4 h-auto ${
               theme === "dark"
                 ? "bg-gray-800 text-gray-200"
                 : "bg-gray-100 text-gray-900"
             }`}
           >
-            <h1 className="text-4xl font-semibold text-center mb-6">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6">
               Verify Email
             </h1>
             <form onSubmit={handleVerify} className="space-y-6">

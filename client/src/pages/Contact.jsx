@@ -6,15 +6,15 @@ function Contact() {
 
   return (
     <div
-      className={`max-w-4xl mx-auto my-16 p-10 rounded-xl shadow-lg transition-all duration-300 ${
+    className={`max-w-4xl mx-4 sm:mx-auto my-8 sm:my-16 p-4 sm:p-8 md:p-10 rounded-xl shadow-lg transition-all duration-300 ${
         isDark ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"
       }`}
     >
       {/* Header Section */}
-      <h2 className="text-4xl font-extrabold text-center mb-6">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6">
         📬 Get in Touch
       </h2>
-      <p className="text-lg text-center mb-8">
+    <p className="text-base sm:text-lg text-center mb-8">
         Have any questions, feedback, or collaboration ideas? I’d love to hear
         from you! Let’s build something amazing together. 🚀
       </p>
@@ -27,11 +27,11 @@ function Contact() {
             isDark ? "bg-gray-800" : "bg-white"
           }`}
         >
-          <h3 className="text-xl font-semibold mb-2">📧 Email Me</h3>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">📧 Email Me</h3>
           <p className="mb-4">Feel free to drop me an email anytime.</p>
           <a
             href="mailto:tourfolio.world"
-            className="text-orange-500 text-lg font-medium hover:underline"
+            className="text-orange-500 text-base sm:text-lg font-medium hover:underline break-all"
           >
             tourfolio.world
           </a>
@@ -43,7 +43,7 @@ function Contact() {
             isDark ? "bg-gray-800" : "bg-white"
           }`}
         >
-          <h3 className="text-xl font-semibold mb-2">🔗 GitHub Repository</h3>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">🔗 GitHub Repository</h3>
           <p className="mb-4">
             Check out my projects, report issues, or contribute.
           </p>
@@ -51,7 +51,7 @@ function Contact() {
             href="https://github.com/Chand-Ali-tech"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 text-lg font-medium hover:underline"
+            className="text-blue-500 text-base sm:text-lg font-medium hover:underline break-all"
           >
             github.com/Chand-Ali-tech
           </a>
@@ -64,10 +64,10 @@ function Contact() {
           isDark ? "bg-blue-900" : "bg-blue-50"
         }`}
       >
-        <h3 className="text-2xl font-semibold mb-4 text-center">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center">
           How Can I Help You? 💡
         </h3>
-        <ul className="text-lg leading-relaxed text-center">
+        <ul className="text-base sm:text-lg leading-relaxed text-center">
           <li>
             ✅ Need help with <b>TourFolio</b>?
           </li>
@@ -85,7 +85,7 @@ function Contact() {
 
       {/* Closing Statement */}
       <div className="mt-8 text-center">
-        <p className="text-lg font-medium">
+        <p className="text-base sm:text-lg font-medium">
           No matter what your question is, I’m here to help. Don’t hesitate to
           reach out—I’d love to connect! 💙
         </p>

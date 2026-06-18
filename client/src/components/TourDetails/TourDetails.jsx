@@ -129,7 +129,7 @@ function Tour() {
 
   return (
     <div
-      className={`max-w-6xl mx-auto p-4 ${
+      className={`max-w-6xl mx-auto px-4 sm:px-6 py-4 ${
         theme === "dark"
           ? "bg-[#111827] text-[#e5e7eb]"
           : "bg-[#f8f8f8] text-[#1f2937]"
@@ -139,7 +139,7 @@ function Tour() {
         <img
           src={tour.imageCover}
           alt={tour.name}
-          className="w-full h-116 object-cover rounded-2xl shadow-lg"
+          className="w-full h-56 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg"
         />
         <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-xl shadow-md">
           {tour.promoCode}
@@ -150,19 +150,19 @@ function Tour() {
         user.favouriteTours.some(
           (favTour) => favTour._id.toString() === tour._id.toString()
         ) ? (
-          <div className="flex justify-between items-center mt-4">
-            <h1 className="text-4xl font-bold">{tour.name}</h1>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-4 gap-2">
+            <h1 className="text-2xl sm:text-4xl font-bold">{tour.name}</h1>
             <button
               onClick={handleAddToFavourite}
               className="flex items-center gap-1"
             >
               <FaHeart size={24} className="text-red-500" />
-              <p className="text-xl">(Favourite tour)</p>
+              <p className="text-base sm:text-xl">(Favourite tour)</p>
             </button>
           </div>
         ) : (
-          <div className="flex justify-between items-center mt-4">
-            <h1 className="text-4xl font-bold">{tour.name}</h1>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-4 gap-2">
+            <h1 className="text-2xl sm:text-4xl font-bold">{tour.name}</h1>
             <button
               onClick={handleAddToFavourite}
               className="flex items-center gap-1"
@@ -173,7 +173,7 @@ function Tour() {
                   isFavorite ? "text-red-600" : "text-gray-600"
                 } cursor-pointer`}
               />
-              <p className="text-xl">
+              <p className="text-base sm:text-xl">
                 ({isFavorite ? "Favourite tour" : "Add to favourite tours"})
               </p>
             </button>
@@ -181,7 +181,7 @@ function Tour() {
         )
       ) : (
         <div className="flex justify-between items-center mt-4">
-          <h1 className="text-4xl font-bold">{tour.name}</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold">{tour.name}</h1>
         </div>
       )}
 
@@ -189,7 +189,7 @@ function Tour() {
 
       <div className="mt-6 flex justify-center">
         <button
-          className={`w-50 py-3 rounded-xl text-xl font-semibold transition duration-300 ${
+          className={`w-full sm:w-auto px-8 py-3 rounded-xl text-lg sm:text-xl font-semibold transition duration-300 ${
             theme === "dark"
               ? "bg-blue-600 hover:bg-blue-700 text-white"
               : "bg-blue-500 hover:bg-blue-600 text-white"
