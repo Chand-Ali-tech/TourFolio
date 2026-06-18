@@ -19,11 +19,11 @@ const TourCard = ({ tour }) => {
       <img
         src={tour.imageCover}
         alt={`Tour image for ${tour.name}`}
-        className="w-full h-45 object-cover"
+        className="w-full h-48 object-cover"
         loading="lazy"
       />
       <div className="p-4">
-        <h2 className="text-xl font-bold mb-2">{tour.name}</h2>
+        <h2 className="text-lg sm:text-xl font-bold mb-2 break-words">{tour.name}</h2>
 
         <div className="flex flex-wrap">
           <div className="w-1/2">
@@ -40,7 +40,7 @@ const TourCard = ({ tour }) => {
 
             <div className="flex items-center gap-2 text-sm mb-2">
               <FaMapMarkerAlt className="text-red-500" />
-              <span>{tour?.locations}</span>
+              <span className="break-words">{tour?.locations}</span>
             </div>
 
             <div className="flex items-center gap-2 text-sm mb-2">
@@ -64,7 +64,7 @@ const TourCard = ({ tour }) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap gap-2 justify-between items-center">
           <span className="text-lg font-bold text-green-600">
             ${tour.price}
           </span>

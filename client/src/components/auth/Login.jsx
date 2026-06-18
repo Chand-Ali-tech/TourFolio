@@ -92,13 +92,13 @@ function Login() {
       }`}
     >
       <div
-        className={`p-8 rounded-lg shadow-lg w-96 h-auto ${
+        className={`p-5 sm:p-8 rounded-lg shadow-lg w-full max-w-md mx-4 h-auto ${
           theme === "dark"
             ? "bg-gray-800 text-gray-200"
             : "bg-white text-gray-900"
         }`}
       >
-        <h1 className="text-4xl font-semibold text-center mb-6">Login</h1>
+        <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6">Login</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="relative">
             <MdOutlineEmail
@@ -143,7 +143,9 @@ function Login() {
             />
           </div>
 
-          <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
+          <div className="overflow-x-auto">
+            <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
+          </div>
 
           {!loading ? (
   <button
@@ -166,7 +168,7 @@ function Login() {
         </form>
 
         <p className="text-center mt-4">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             to="/signup"
             className={`font-semibold hover:underline ${

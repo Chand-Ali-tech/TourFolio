@@ -14,7 +14,7 @@ function Footer() {
                 </div>
 
                 {/* Right Section - Quick Links & Socials */}
-                <div className="flex flex-col md:items-end">
+                <div className="flex flex-col items-start md:items-end">
                     <h3 className="text-lg font-semibold text-white">Get in Touch</h3>
                     <a href="mailto:tourfolio.world" className="text-orange-400 hover:underline text-sm mt-1">
                         📧 tourfolio.world

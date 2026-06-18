@@ -12,14 +12,16 @@ const Dashboard = () => {
 
   return (
     <div
-      className={`min-h-screen p-8 ${
+      className={`min-h-screen px-4 py-8 sm:p-8 ${
         theme === "dark"
           ? "bg-[#111827] text-[#e5e7eb]"
           : "bg-[#f8f8f8] text-[#1f2937]"
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Welcome to TOURFOLIO</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
+          Welcome to TOURFOLIO
+        </h1>
 
         {/* Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -67,7 +69,7 @@ const Dashboard = () => {
           >
             <div className="flex items-center mb-4">
               <FaUsers className="text-purple-500 text-2xl mr-3" />
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-lg sm:text-xl font-semibold">
                 Travel Community{" "}
                 <span className="font-semibold">(coming soon)</span>
               </h2>

@@ -14,13 +14,13 @@ function TourSummary({ tour }) {
   return (
     <div>
       <p
-        className={`text-lg mt-2 ${
+        className={`text-base sm:text-lg mt-2 ${
           theme === "dark" ? "text-gray-300" : "text-gray-600"
         }`}
       >
         {tour.summary}
       </p>
-      <div className="grid grid-cols-2 gap-4 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
         {/* Duration */}
         <div
           className={`p-4 rounded-xl shadow-md flex items-center gap-2 ${
@@ -30,7 +30,7 @@ function TourSummary({ tour }) {
           <FaClock className="text-blue-500" size="20px" />
           <div>
             <p
-              className={`text-xl font-semibold ${
+              className={`text-lg sm:text-xl font-semibold ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
               }`}
             >
@@ -56,7 +56,7 @@ function TourSummary({ tour }) {
           />
           <div>
             <p
-              className={`text-xl font-semibold ${
+              className={`text-lg sm:text-xl font-semibold ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
               }`}
             >
@@ -81,7 +81,7 @@ function TourSummary({ tour }) {
           <FaMapMarkerAlt className="text-red-500" size="20px" />
           <div>
             <p
-              className={`text-xl font-semibold ${
+              className={`text-lg sm:text-xl font-semibold ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
               }`}
             >
@@ -105,7 +105,7 @@ function TourSummary({ tour }) {
           <FaUsers className="text-green-500" size="20px" />
           <div>
             <p
-              className={`text-xl font-semibold ${
+              className={`text-lg sm:text-xl font-semibold ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
               }`}
             >
@@ -126,7 +126,7 @@ function TourSummary({ tour }) {
           <FaStar className="text-yellow-500" size="20px" />
           <div>
             <p
-              className={`text-xl font-semibold ${
+              className={`text-lg sm:text-xl font-semibold ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
               }`}
             >
@@ -146,7 +146,7 @@ function TourSummary({ tour }) {
         >
           <FaDollarSign className="text-red-600" size="28px" />
           <div>
-            <p className="text-2xl font-bold text-red-500">{tour.price}</p>
+            <p className="text-xl sm:text-2xl font-bold text-red-500">{tour.price}</p>
           </div>
         </div>
       </div>

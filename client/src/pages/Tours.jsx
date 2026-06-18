@@ -68,275 +68,270 @@ function TourList() {
 
   return (
     <div
-      className={`flex ${
+      className={`min-h-screen ${
         theme === "dark"
           ? "bg-gray-900 text-gray-200"
           : "bg-gray-100 text-gray-900"
       }`}
     >
-      {/* Sidebar - Fixed & Non-Scrolling */}
-      <div
-        className={`w-1/5 p-4 shadow-2xl h-screen fixed ${
-          theme === "dark" ? "bg-gray-800" : "bg-white"
-        }`}
-      >
-        <h2
-          className={`text-lg font-semibold mb-4 ${
-            theme === "dark" ? "text-gray-200" : "text-gray-700"
+      <div className="mx-auto w-full max-w-7xl flex flex-col lg:flex-row gap-4 p-4 sm:p-6">
+        {/* Sidebar - Responsive */}
+        <div
+          className={`w-full lg:w-72 p-4 rounded-xl shadow-2xl h-fit lg:sticky lg:top-24 ${
+            theme === "dark" ? "bg-gray-800" : "bg-white"
           }`}
         >
-          Filters
-        </h2>
+          <h2
+            className={`text-lg font-semibold mb-4 ${
+              theme === "dark" ? "text-gray-200" : "text-gray-700"
+            }`}
+          >
+            Filters
+          </h2>
 
-        {/* Difficulty */}
-        <div className="flex items-center justify-between mb-3">
-          <label
-            className={`text-sm ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Difficulty:
-          </label>
-          <select
-            value={difficulty}
-            onChange={(e) => setDifficulty(e.target.value)}
-            className={`w-32 p-1 border rounded-md text-sm ${
-              theme === "dark"
-                ? "bg-gray-700 border-gray-600 text-white"
-                : "bg-white border-gray-300 text-gray-900"
-            }`}
-          >
-            <option value="">All</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="difficult">Difficult</option>
-          </select>
+          {/* Difficulty */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1 sm:gap-3">
+            <label
+              className={`text-sm ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Difficulty:
+            </label>
+            <select
+              value={difficulty}
+              onChange={(e) => setDifficulty(e.target.value)}
+              className={`w-full sm:w-40 p-1.5 border rounded-md text-sm ${
+                theme === "dark"
+                  ? "bg-gray-700 border-gray-600 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+              }`}
+            >
+              <option value="">All</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="difficult">Difficult</option>
+            </select>
+          </div>
+
+          {/* Sort By */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1 sm:gap-3">
+            <label
+              className={`text-sm ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Sort By:
+            </label>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className={`w-full sm:w-40 p-1.5 border rounded-md text-sm ${
+                theme === "dark"
+                  ? "bg-gray-700 border-gray-600 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+              }`}
+            >
+              <option value="">None</option>
+              <option value="price">Price</option>
+              <option value="averageRating">Rating</option>
+              <option value="duration">Duration</option>
+              <option value="maxGroupSize">Group Size</option>
+            </select>
+          </div>
+
+          {/* Order */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1 sm:gap-3">
+            <label
+              className={`text-sm ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Order:
+            </label>
+            <select
+              value={order}
+              onChange={(e) => setOrder(e.target.value)}
+              className={`w-full sm:w-40 p-1.5 border rounded-md text-sm ${
+                theme === "dark"
+                  ? "bg-gray-700 border-gray-600 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+              }`}
+            >
+              <option value="">None</option>
+              <option value={false}>Ascending</option>
+              <option value={true}>Descending</option>
+            </select>
+          </div>
+
+          {/* Rating */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1 sm:gap-3">
+            <label
+              className={`text-sm ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Rating:
+            </label>
+            <select
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              className={`w-full sm:w-40 p-1.5 border rounded-md text-sm ${
+                theme === "dark"
+                  ? "bg-gray-700 border-gray-600 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+              }`}
+            >
+              <option value={1}>More than 1</option>
+              <option value={2}>More than 2</option>
+              <option value={3}>More than 3</option>
+              <option value={4}>More than 4</option>
+              <option value={4.5}>More than 4.5</option>
+            </select>
+          </div>
+
+          {/* Price */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1 sm:gap-3">
+            <label
+              className={`text-sm ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Price ($):
+            </label>
+            <select
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              className={`w-full sm:w-40 p-1.5 border rounded-md text-sm ${
+                theme === "dark"
+                  ? "bg-gray-700 border-gray-600 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+              }`}
+            >
+              <option value={1000}>More than 1000</option>
+              <option value={2000}>More than 2000</option>
+              <option value={2500}>More than 2500</option>
+              <option value={3000}>More than 3000</option>
+              <option value={3500}>More than 3500</option>
+            </select>
+          </div>
+
+          {/* Tours Limit */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1 sm:gap-3">
+            <label
+              className={`text-sm ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Tours per page:
+            </label>
+            <select
+              value={limit}
+              onChange={(e) => {
+                setPage(1);
+                return setLimit(e.target.value);
+              }}
+              className={`w-full sm:w-40 p-1.5 border rounded-md text-sm ${
+                theme === "dark"
+                  ? "bg-gray-700 border-gray-600 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+              }`}
+            >
+              <option value={9}>9</option>
+              <option value={10}>10</option>
+              <option value={15}>15</option>
+              <option value={20}>20</option>
+              <option value={30}>30</option>
+            </select>
+          </div>
+
+          {/* Reset Button */}
+          <div>
+            <button
+              onClick={() => {
+                setDifficulty("");
+                setRating(0);
+                setPrice(0);
+                setSortBy("");
+                setOrder(false);
+                setLimit(10);
+              }}
+              className={`w-full h-10 px-6 rounded-md ${
+                theme === "dark"
+                  ? "bg-blue-600 hover:bg-blue-700 text-white"
+                  : "bg-blue-500 hover:bg-blue-600 text-white"
+              } transition-colors`}
+            >
+              Reset
+            </button>
+          </div>
         </div>
 
-        {/* Sort By */}
-        <div className="flex items-center justify-between mb-3">
-          <label
-            className={`text-sm ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Sort By:
-          </label>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className={`w-32 p-1 border rounded-md text-sm ${
-              theme === "dark"
-                ? "bg-gray-700 border-gray-600 text-white"
-                : "bg-white border-gray-300 text-gray-900"
-            }`}
-          >
-            <option value="">None</option>
-            <option value="price">Price</option>
-            <option value="averageRating">Rating</option>
-            <option value="duration">Duration</option>
-            <option value="maxGroupSize">Group Size</option>
-          </select>
-        </div>
+        {/* Tour List */}
+        <div className="flex-1 min-w-0">
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {tours.length > 0 ? (
+                  tours.map((tour) => <TourCard key={tour._id} tour={tour} />)
+                ) : (
+                  <p
+                    className={`text-center ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-500"
+                    }`}
+                  >
+                    No tours found.
+                  </p>
+                )}
+              </div>
 
-        {/* Order */}
-        <div className="flex items-center justify-between mb-3">
-          <label
-            className={`text-sm ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Order:
-          </label>
-          <select
-            value={order}
-            onChange={(e) => setOrder(e.target.value)}
-            className={`w-32 p-1 border rounded-md text-sm ${
-              theme === "dark"
-                ? "bg-gray-700 border-gray-600 text-white"
-                : "bg-white border-gray-300 text-gray-900"
-            }`}
-          >
-            <option value="">None</option>
-            <option value={false}>Ascending</option>
-            <option value={true}>Descending</option>
-          </select>
-        </div>
-
-        {/* Rating */}
-        <div className="flex items-center justify-between mb-3">
-          <label
-            className={`text-sm ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Rating:
-          </label>
-          <select
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            className={`w-32 p-1 border rounded-md text-sm ${
-              theme === "dark"
-                ? "bg-gray-700 border-gray-600 text-white"
-                : "bg-white border-gray-300 text-gray-900"
-            }`}
-          >
-            <option value={1}>More than 1</option>
-            <option value={2}>More than 2</option>
-            <option value={3}>More than 3</option>
-            <option value={4}>More than 4</option>
-            <option value={4.5}>More than 4.5</option>
-          </select>
-        </div>
-
-        {/* Price */}
-        <div className="flex items-center justify-between mb-3">
-          <label
-            className={`text-sm ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Price ($):
-          </label>
-          <select
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            className={`w-32 p-1 border rounded-md text-sm ${
-              theme === "dark"
-                ? "bg-gray-700 border-gray-600 text-white"
-                : "bg-white border-gray-300 text-gray-900"
-            }`}
-          >
-            <option value={1000}>More than 1000</option>
-            <option value={2000}>More than 2000</option>
-            <option value={2500}>More than 2500</option>
-            <option value={3000}>More than 3000</option>
-            <option value={3500}>More than 3500</option>
-          </select>
-        </div>
-
-        {/* Tours Limit */}
-        <div className="flex items-center justify-between mb-3">
-          <label
-            className={`text-sm ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            Tours limit per page:
-          </label>
-          <select
-            value={limit}
-            onChange={(e) => {
-              setPage(1);
-              return setLimit(e.target.value);
-            }}
-            className={`w-32 p-1 border rounded-md text-sm ${
-              theme === "dark"
-                ? "bg-gray-700 border-gray-600 text-white"
-                : "bg-white border-gray-300 text-gray-900"
-            }`}
-          >
-            <option value={9}>9</option>
-            <option value={10}>10</option>
-            <option value={15}>15</option>
-            <option value={20}>20</option>
-            <option value={30}>30</option>
-          </select>
-        </div>
-
-        {/* Reset Button */}
-        <div>
-          <button
-            onClick={() => {
-              setDifficulty("");
-              setRating(0);
-              setPrice(0);
-              setSortBy("");
-              setOrder(false);
-              setLimit(10);
-            }}
-            className={`w-full h-10 px-6 rounded-md ${
-              theme === "dark"
-                ? "bg-blue-600 hover:bg-blue-700 text-white"
-                : "bg-blue-500 hover:bg-blue-600 text-white"
-            } transition-colors`}
-          >
-            Reset
-          </button>
-        </div>
-      </div>
-
-      {/* Tour List - Scrollable */}
-      <div
-        className={`w-4/5 ml-[20%] p-6 overflow-y-auto h-screen scrollbar-hide ${
-          theme === "dark" ? "bg-gray-900" : "bg-gray-100"
-        }`}
-      >
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tours.length > 0 ? (
-                tours.map((tour) => <TourCard key={tour._id} tour={tour} />)
-              ) : (
-                <p
-                  className={`text-center ${
-                    theme === "dark" ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  No tours found.
-                </p>
-              )}
-            </div>
-
-            {/* Pagination UI */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {/* Previous Button */}
-              <button
-                onClick={() => handlePageChange(page - 1)}
-                disabled={page === 1}
-                className={`w-10 h-10 flex items-center justify-center rounded-full ${
-                  theme === "dark"
-                    ? "bg-gray-700 text-gray-200 hover:bg-blue-600 hover:text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-                } transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
-              >
-                <GrLinkPrevious />
-              </button>
-
-              {/* Page Numbers */}
-              {Array.from({ length: totalPages }, (_, index) => (
+              {/* Pagination UI */}
+              <div className="flex justify-center mt-8 gap-2 flex-wrap">
                 <button
-                  key={index + 1}
-                  onClick={() => handlePageChange(index + 1)}
+                  onClick={() => handlePageChange(page - 1)}
+                  disabled={page === 1}
                   className={`w-10 h-10 flex items-center justify-center rounded-full ${
-                    page === index + 1
-                      ? "bg-blue-500 text-white"
-                      : theme === "dark"
+                    theme === "dark"
                       ? "bg-gray-700 text-gray-200 hover:bg-blue-600 hover:text-white"
                       : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-                  } transition-colors`}
+                  } transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
-                  {index + 1}
+                  <GrLinkPrevious />
                 </button>
-              ))}
 
-              {/* Next Button */}
-              <button
-                onClick={() => handlePageChange(page + 1)}
-                disabled={page === totalPages}
-                className={`w-10 h-10 flex items-center justify-center rounded-full ${
-                  theme === "dark"
-                    ? "bg-gray-700 text-gray-200 hover:bg-blue-600 hover:text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-                } transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
-              >
-                <GrLinkNext />
-              </button>
-            </div>
-          </>
-        )}
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <button
+                    key={index + 1}
+                    onClick={() => handlePageChange(index + 1)}
+                    className={`w-10 h-10 flex items-center justify-center rounded-full ${
+                      page === index + 1
+                        ? "bg-blue-500 text-white"
+                        : theme === "dark"
+                        ? "bg-gray-700 text-gray-200 hover:bg-blue-600 hover:text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
+                    } transition-colors`}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+
+                <button
+                  onClick={() => handlePageChange(page + 1)}
+                  disabled={page === totalPages}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full ${
+                    theme === "dark"
+                      ? "bg-gray-700 text-gray-200 hover:bg-blue-600 hover:text-white"
+                      : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
+                  } transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  <GrLinkNext />
+                </button>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

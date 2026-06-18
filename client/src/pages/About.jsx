@@ -6,17 +6,17 @@ function About() {
 
   return (
     <div
-      className={`max-w-4xl mx-auto my-16 p-10 rounded-xl shadow-lg transition-all duration-300 ${
+    className={`max-w-4xl mx-4 sm:mx-auto my-8 sm:my-16 p-4 sm:p-8 md:p-10 rounded-xl shadow-lg transition-all duration-300 ${
         isDark ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"
       }`}
     >
       {/* Header Section */}
-      <h2 className="text-4xl font-extrabold text-center mb-6">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6">
         🌍 About TourFolio
       </h2>
-      <p className="text-lg text-center mb-8">
+    <p className="text-base sm:text-lg text-center mb-8">
         Your ultimate travel companion, helping you discover the world one tour
-        at a time. Whether you're a traveler looking for the best experiences or
+      at a time. Whether you&apos;re a traveler looking for the best experiences or
         a tour provider wanting to showcase your trips, <b>TourFolio</b> is the
         perfect platform for you. ✈️🏔️
       </p>
@@ -27,8 +27,8 @@ function About() {
           isDark ? "bg-gray-800" : "bg-white"
         }`}
       >
-        <h3 className="text-2xl font-semibold mb-3">📌 What is TourFolio?</h3>
-        <p className="text-lg">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-3">📌 What is TourFolio?</h3>
+        <p className="text-base sm:text-lg">
           TourFolio is a <b>modern tour management platform</b> that helps
           travelers find and book exciting tours with ease. It connects
           adventure seekers with top-rated tour providers, ensuring
@@ -42,8 +42,8 @@ function About() {
           isDark ? "bg-gray-800" : "bg-white"
         }`}
       >
-        <h3 className="text-2xl font-semibold mb-3">🚀 Key Features</h3>
-        <ul className="text-lg leading-relaxed">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-3">🚀 Key Features</h3>
+        <ul className="text-base sm:text-lg leading-relaxed">
           <li>
             ✅ <b>Discover Top Tours</b> – Browse the best-rated tours in
             different locations.
@@ -72,14 +72,14 @@ function About() {
           isDark ? "bg-gray-800" : "bg-white"
         }`}
       >
-        <h3 className="text-2xl font-semibold mb-3">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-3">
           🌟 Why Choose TourFolio?
         </h3>
-        <p className="text-lg">
+        <p className="text-base sm:text-lg">
           We know that planning the perfect trip can be overwhelming. That’s why{" "}
           <b>TourFolio</b> takes the guesswork out of the process by offering:
         </p>
-        <ul className="text-lg leading-relaxed mt-3">
+        <ul className="text-base sm:text-lg leading-relaxed mt-3">
           <li>
             ✅ <b>Authentic Tour Experiences</b> – Only verified and
             high-quality tours.
@@ -105,8 +105,8 @@ function About() {
           isDark ? "bg-blue-900" : "bg-blue-50"
         }`}
       >
-        <h3 className="text-2xl font-semibold mb-3">🎯 Our Mission</h3>
-        <p className="text-lg">
+        <h3 className="text-xl sm:text-2xl font-semibold mb-3">🎯 Our Mission</h3>
+        <p className="text-base sm:text-lg">
           At <b>TourFolio</b>, we believe that{" "}
           <b>traveling should be stress-free and unforgettable</b>. Our mission
           is to bridge the gap between travelers and the best tour experiences,
@@ -117,7 +117,7 @@ function About() {
 
       {/* Closing Statement */}
       <div className="text-center mt-8">
-        <p className="text-lg font-medium">
+        <p className="text-base sm:text-lg font-medium">
           🌍 Ready to explore the world with TourFolio? Start your adventure
           today and discover breathtaking tours at your fingertips! 🚀
         </p>

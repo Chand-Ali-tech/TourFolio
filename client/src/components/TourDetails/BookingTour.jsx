@@ -40,16 +40,16 @@ function BookingTour() {
   return (
     <Elements stripe={stripePromise}>
       <div
-        className={`max-w-3xl mx-auto mt-8 p-6 rounded-lg shadow-md transition-all duration-300 ${
+        className={`max-w-3xl mx-4 sm:mx-auto mt-8 p-4 sm:p-6 rounded-lg shadow-md transition-all duration-300 ${
           isDark ? "bg-gray-900 text-white" : "bg-white text-gray-800"
         }`}
       >
-        <h1 className="text-3xl font-bold mb-4">{tour.name} Booking</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4">{tour.name} Booking</h1>
 
         <img
           src={tour.imageCover}
           alt={tour.name}
-          className="w-full h-64 object-cover rounded-lg shadow-md"
+          className="w-full h-48 sm:h-64 object-cover rounded-lg shadow-md"
         />
 
         <p className="mt-4">{tour.description}</p>
@@ -71,7 +71,7 @@ function BookingTour() {
         </div>
 
         {!discount && (
-          <div className="mt-4 flex items-center gap-2">
+          <div className="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
             <input
               type="text"
               placeholder="Enter Promo Code"
@@ -85,7 +85,7 @@ function BookingTour() {
             />
             <button
               onClick={applyPromoCode}
-              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition sm:w-auto w-full"
             >
               Apply
             </button>

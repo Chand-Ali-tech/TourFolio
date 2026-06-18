@@ -25,14 +25,14 @@ function TrendingTours() {
   }, []);
   
   return (
-    <div className="mx-8 my-10">
+    <div className="mx-4 sm:mx-8 my-10">
       {/* 🔥 Trending Tours Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-6 flex items-center justify-center">
         🌏Trending <span className="text-orange-500 ml-2">Tours</span>
         <img src="/logo2.jpg" alt="TourFolio Logo" className="w-8 h-8 ml-2" />
       </h2>
 
-      <p className="text-center text-gray-600 text-lg mb-8">
+      <p className="text-center text-gray-600 text-base sm:text-lg mb-8">
         Explore the most popular destinations people are loving right now!
       </p>
 
